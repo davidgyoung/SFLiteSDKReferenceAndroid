@@ -20,10 +20,6 @@ public class MyApplication extends Application {
         // You must set up the SDK here for background detections
         final SFBeaconManager beaconManager = SFBeaconManager.Companion.getInstance(this);
 
-
-
-        // problem context not set yet
-
         beaconManager.setClient("acme"); // This should be your company name registered with the servers
         beaconManager.setEmail("test@test.com"); // This should be the logged in user
 
