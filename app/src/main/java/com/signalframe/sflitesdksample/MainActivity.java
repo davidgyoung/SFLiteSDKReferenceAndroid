@@ -22,6 +22,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -35,9 +36,11 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final int PERMISSION_REQUEST_BACKGROUND_LOCATION = 1;
     private static final int PERMISSION_REQUEST_FINE_LOCATION = 2;
+    private ConfigurationDialog configurationDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.configurationDialog = new ConfigurationDialog(this);
         final SFBeaconManager beaconManager = SFBeaconManager.Companion.getInstance(this);
         setContentView(R.layout.activity_main);
         beaconManager.getMonitoringData().getState().observe(this, new Observer<Integer>() {
@@ -131,6 +134,10 @@ public class MainActivity extends AppCompatActivity {
                 builder.show();
             }
         }
+    }
+
+    public void editConfigurationTapped(View view) {
+        configurationDialog.popConfigurationDialog(false);
     }
 
 

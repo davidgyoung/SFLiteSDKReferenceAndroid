@@ -22,6 +22,8 @@ public class MyApplication extends Application {
 
         beaconManager.setClient("acme"); // This should be your company name registered with the servers
         beaconManager.setEmail("test@test.com"); // This should be the logged in user
+        // These items can be overriden by user selection.  A sample of how to do this is shown in
+        // the MainActivity using the ConfigurtionDialog class.
 
         // When the SDK runs in the background on Android 8+ devices, it must display a persistent
         // notification to the user to indicate it is running.  The code below shows how you

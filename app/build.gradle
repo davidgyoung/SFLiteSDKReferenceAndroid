@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 30
@@ -8,8 +10,8 @@ android {
         applicationId "com.signalframe.sflitesdksample"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,7 +31,7 @@ dependencies {
     // This file is in /libs
     // Be sure you also specify add a line like this in your repository declaration in your
     // outermost build.gradle file: flatDir { dirs 'libs' }
-    implementation 'com.signalframe:SFLiteSDK:1+@aar'
+    implementation 'com.signalframe:SFLiteSDK:1.1@aar'
     // The following are dependencies of the SFLiteSDK and must be included
     implementation 'org.altbeacon:android-beacon-library:2.17.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.3"
